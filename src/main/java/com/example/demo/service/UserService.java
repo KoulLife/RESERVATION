@@ -28,6 +28,10 @@ public class UserService {
     userRepository.save(user);
   }
 
+  public User findByUsername(String username){
+    return userRepository.findByUsername(username);
+  }
+
   @Transactional
   public void changeToExpert(Long id){
     Optional<User> user = userRepository.findById(id);
